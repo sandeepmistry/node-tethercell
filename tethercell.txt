@@ -1,0 +1,53 @@
+peripheral discovered (db9ed88cffe7422db2f5e85f43f05afa):
+	hello my local name is:
+		undefined
+	can I interest you in any of the following advertised services:
+		["5ec0fff03cf2a682e2112af96efdf667"]
+	here is my service data:
+		"0000"
+
+attr handle: 0x0001, end grp handle: 0x000b uuid: 00001800-0000-1000-8000-00805f9b34fb
+
+handle: 0x0002, char properties: 0x02, char value handle: 0x0003, uuid: 00002a00-0000-1000-8000-00805f9b34fb
+handle: 0x0004, char properties: 0x02, char value handle: 0x0005, uuid: 00002a01-0000-1000-8000-00805f9b34fb
+handle: 0x0006, char properties: 0x0a, char value handle: 0x0007, uuid: 00002a02-0000-1000-8000-00805f9b34fb
+handle: 0x0008, char properties: 0x0a, char value handle: 0x0009, uuid: 00002a03-0000-1000-8000-00805f9b34fb
+handle: 0x000a, char properties: 0x02, char value handle: 0x000b, uuid: 00002a04-0000-1000-8000-00805f9b34fb
+
+attr handle: 0x000c, end grp handle: 0x000f uuid: 00001801-0000-1000-8000-00805f9b34fb
+
+handle: 0x000d, char properties: 0x20, char value handle: 0x000e, uuid: 00002a05-0000-1000-8000-00805f9b34fb
+
+attr handle: 0x0010, end grp handle: 0x0022 uuid: 0000180a-0000-1000-8000-00805f9b34fb
+
+handle: 0x0011, char properties: 0x02, char value handle: 0x0012, uuid: 00002a23-0000-1000-8000-00805f9b34fb
+handle: 0x0013, char properties: 0x02, char value handle: 0x0014, uuid: 00002a24-0000-1000-8000-00805f9b34fb
+handle: 0x0015, char properties: 0x02, char value handle: 0x0016, uuid: 00002a25-0000-1000-8000-00805f9b34fb
+handle: 0x0017, char properties: 0x02, char value handle: 0x0018, uuid: 00002a26-0000-1000-8000-00805f9b34fb
+handle: 0x0019, char properties: 0x02, char value handle: 0x001a, uuid: 00002a27-0000-1000-8000-00805f9b34fb
+handle: 0x001b, char properties: 0x02, char value handle: 0x001c, uuid: 00002a28-0000-1000-8000-00805f9b34fb
+handle: 0x001d, char properties: 0x02, char value handle: 0x001e, uuid: 00002a29-0000-1000-8000-00805f9b34fb
+handle: 0x001f, char properties: 0x02, char value handle: 0x0020, uuid: 00002a2a-0000-1000-8000-00805f9b34fb
+handle: 0x0021, char properties: 0x02, char value handle: 0x0022, uuid: 00002a50-0000-1000-8000-00805f9b34fb
+
+attr handle: 0x0023, end grp handle: 0xffff uuid: 5ec0fff0-3cf2-a682-e211-2af96efdf667
+
+handle: 0x0024, char properties: 0x02, char value handle: 0x0025, uuid: 5ec0fff1-3cf2-a682-e211-2af96efdf667 (Family)
+handle: 0x0027, char properties: 0x0a, char value handle: 0x0028, uuid: 5ec0fff2-3cf2-a682-e211-2af96efdf667 (FET State)
+handle: 0x002a, char properties: 0x02, char value handle: 0x002b, uuid: 5ec0fff3-3cf2-a682-e211-2af96efdf667 (Battery Voltage)
+handle: 0x002d, char properties: 0x0a, char value handle: 0x002e, uuid: 5ec0fff4-3cf2-a682-e211-2af96efdf667 (Timers)
+handle: 0x0030, char properties: 0x0a, char value handle: 0x0031, uuid: 5ec0fff5-3cf2-a682-e211-2af96efdf667 (Timer access index)
+handle: 0x0033, char properties: 0x02, char value handle: 0x0034, uuid: 5ec0fff6-3cf2-a682-e211-2af96efdf667 (Battery Voltage Most Recent Index)
+handle: 0x0036, char properties: 0x02, char value handle: 0x0037, uuid: 5ec0fff7-3cf2-a682-e211-2af96efdf667 (Battery Voltage History)
+handle: 0x0039, char properties: 0x0a, char value handle: 0x003a, uuid: 5ec0fff8-3cf2-a682-e211-2af96efdf667 (Password)
+handle: 0x003c, char properties: 0x0a, char value handle: 0x003d, uuid: 5ec0fff9-3cf2-a682-e211-2af96efdf667 (Device Name)
+handle: 0x003f, char properties: 0x0a, char value handle: 0x0040, uuid: 5ec0fffa-3cf2-a682-e211-2af96efdf667 (UTC Time)
+handle: 0x0042, char properties: 0x0a, char value handle: 0x0043, uuid: 5ec0fffb-3cf2-a682-e211-2af96efdf667 (Advertising Period in s)
+handle: 0x0045, char properties: 0x0a, char value handle: 0x0046, uuid: 5ec0fffc-3cf2-a682-e211-2af96efdf667 (Authorization)
+
+write c (Authorization): 00000000
+read 2 (FET State)
+read 3 (Battery Voltage)
+write a (UTC Time): b85f0253
+read 8 (Password)
+
