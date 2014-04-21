@@ -21,6 +21,10 @@
   "homepage": "https://github.com/sandeepmistry/node-tethercell",
   "devDependencies": {
     "jshint": "~2.4.3",
-    "bleno": "~0.1.2"
+    "bleno": "~0.1.2",
+    "async": "~0.7.0"
+  },
+  "dependencies": {
+    "noble-device": "git://github.com/sandeepmistry/noble-device"
   }
 }
