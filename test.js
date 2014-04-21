@@ -16,13 +16,6 @@ Tethercell.discover(function(tethercell) {
         tethercell.connectAndSetup(callback);
       },
       function(callback) {
-        console.log('readDeviceName');
-        tethercell.readDeviceName(function(deviceName) {
-          console.log('\tdevice name = ' + deviceName);
-          callback();
-        });
-      },
-      function(callback) {
         console.log('readModelNumber');
         tethercell.readModelNumber(function(modelNumber) {
           console.log('\tmodel name = ' + modelNumber);
@@ -114,6 +107,17 @@ Tethercell.discover(function(tethercell) {
         tethercell.readVoltage(function(voltage) {
           console.log('\tvoltage = ' + voltage + 'V');
           callback();
+        });
+      },
+      function(callback) {
+        console.log('readDeviceName');
+        tethercell.readDeviceName(function(deviceName) {
+          console.log('\tdevice name = ' + deviceName);
+
+          deviceName = 'TETHERCELL ONE';
+
+          console.log('writeDeviceName');
+          tethercell.writeDeviceName(deviceName, callback);
         });
       },
       function(callback) {

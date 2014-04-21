@@ -6,6 +6,7 @@ var SERVICE_UUID       = '5ec0fff03cf2a682e2112af96efdf667';
 var AUTHORIZATION_UUID = '5ec0fffc3cf2a682e2112af96efdf667';
 var FET_STATE_UUID     = '5ec0fff23cf2a682e2112af96efdf667';
 var VOLTAGE_UUID       = '5ec0fff33cf2a682e2112af96efdf667';
+var DEVICE_NAME_UUID   = '5ec0fff93cf2a682e2112af96efdf667';
 
 var Tethercell = function(peripheral) {
   NobleDevice.call(this, peripheral);
@@ -64,6 +65,18 @@ Tethercell.prototype.readVoltage = function(callback) {
 
     callback(voltage);
   }.bind(this));
+};
+
+Tethercell.prototype.readDeviceName = function(callback) {
+  this.readStringCharacteristic(SERVICE_UUID, DEVICE_NAME_UUID, callback);
+};
+
+Tethercell.prototype.writeDeviceName = function(deviceName, callback) {
+  for (var i = deviceName.length; i < 16; i++) {
+    deviceName += '\0';
+  }
+
+  this.writeStringCharacteristic(SERVICE_UUID, DEVICE_NAME_UUID, deviceName, callback);
 };
 
 module.exports = Tethercell;
