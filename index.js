@@ -5,6 +5,7 @@ var NobleDevice = require('noble-device');
 var SERVICE_UUID       = '5ec0fff03cf2a682e2112af96efdf667';
 var AUTHORIZATION_UUID = '5ec0fffc3cf2a682e2112af96efdf667';
 var FET_STATE_UUID     = '5ec0fff23cf2a682e2112af96efdf667';
+var VOLTAGE_UUID       = '5ec0fff33cf2a682e2112af96efdf667';
 
 var Tethercell = function(peripheral) {
   NobleDevice.call(this, peripheral);
@@ -13,8 +14,7 @@ var Tethercell = function(peripheral) {
 Tethercell.SCAN_UUIDS = [SERVICE_UUID];
 
 Tethercell.is = function(peripheral) {
-  return (peripheral.advertisement.localName === undefined) /*&& 
-          (peripheral.advertisement.serviceUuids === [SERVICE_UUID])*/;
+  return (peripheral.advertisement.localName === undefined);
 };
 
 NobleDevice.Util.inherits(Tethercell, NobleDevice);
@@ -55,6 +55,14 @@ Tethercell.prototype.turnOff = function(callback) {
 Tethercell.prototype.isOn = function(callback) {
   this.readFetState(function(data) {
     callback(data[0] ? true : false);
+  }.bind(this));
+};
+
+Tethercell.prototype.readVoltage = function(callback) {
+  this.readUInt16LECharacteristic(SERVICE_UUID, VOLTAGE_UUID, function(value) {
+    var voltage = 1.36 * (value / 1662.0);
+
+    callback(voltage);
   }.bind(this));
 };
 

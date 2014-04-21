@@ -110,6 +110,13 @@ Tethercell.discover(function(tethercell) {
         });
       },
       function(callback) {
+        console.log('readVoltage');
+        tethercell.readVoltage(function(voltage) {
+          console.log('\tvoltage = ' + voltage + 'V');
+          callback();
+        });
+      },
+      function(callback) {
         console.log('disconnect');
         tethercell.disconnect(callback);
       }
