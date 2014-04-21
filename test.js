@@ -77,15 +77,36 @@ Tethercell.discover(function(tethercell) {
         });
       },
       function(callback) {
+        console.log('isOn');
+        tethercell.isOn(function(isOn) {
+          console.log('\tis on = ' + isOn);
+          callback();
+        });
+      },
+      function(callback) {
         console.log('turnOn');
         tethercell.turnOn(function() {
           setTimeout(callback, 5000);
         });
       },
       function(callback) {
+        console.log('isOn');
+        tethercell.isOn(function(isOn) {
+          console.log('\tis on = ' + isOn);
+          callback();
+        });
+      },
+      function(callback) {
         console.log('turnOff');
         tethercell.turnOff(function() {
           setTimeout(callback, 5000);
+        });
+      },
+      function(callback) {
+        console.log('isOn');
+        tethercell.isOn(function(isOn) {
+          console.log('\tis on = ' + isOn);
+          callback();
         });
       },
       function(callback) {

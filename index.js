@@ -32,37 +32,30 @@ Tethercell.prototype.authorize = function(pin, callback) {
   this.writeServiceDataCharacteristic(AUTHORIZATION_UUID, new Buffer(pin, 'hex'), callback);
 };
 
-Tethercell.prototype.setFetState = function(on, callback) {
+Tethercell.prototype.readFetState = function(callback) {
+  this.readServiceDataCharacteristic(FET_STATE_UUID, function(data) {
+    callback(data);
+  }.bind(this));
+};
+
+Tethercell.prototype.writeFetState = function(on, callback) {
   var data = new Buffer([on ? 0x01 : 0x00]);
 
   this.writeServiceDataCharacteristic(FET_STATE_UUID, data, callback);
 };
 
 Tethercell.prototype.turnOn = function(callback) {
-  this.setFetState(true, callback);
+  this.writeFetState(true, callback);
 };
 
 Tethercell.prototype.turnOff = function(callback) {
-  this.setFetState(false, callback);
+  this.writeFetState(false, callback);
 };
 
-
-// DeviceFactory1.prototype.setLed = function(red, green, blue, callback) {
-//   var value = 0x00;
-
-//   if (red) {
-//     value |= 0x01;
-//   }
-
-//   if (green) {
-//     value |= 0x02;
-//   }
-
-//   if (blue) {
-//     value |= 0x04;
-//   }
-
-//   this.writeDataCharacteristic(TEST_SERVICE_UUID, LED_UUID, new Buffer([value]), callback);
-// };
+Tethercell.prototype.isOn = function(callback) {
+  this.readFetState(function(data) {
+    callback(data[0] ? true : false);
+  }.bind(this));
+};
 
 module.exports = Tethercell;
