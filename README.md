@@ -6,7 +6,7 @@ node.js lib for the [Tethercell](http://tetherboard.com)
 Install
 -------
 
-npm install tethercell
+    npm install tethercell
 
 Usage
 -----
@@ -50,4 +50,3 @@ __Device Name__
     var deviceName = 'TETHERCELL ONE';
 
     tethercell.writeDeviceName(deviceName, callback);
-    
