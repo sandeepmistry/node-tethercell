@@ -1,6 +1,6 @@
 {
   "name": "tethercell",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "node.js lib for the Tethercell",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
     "async": "~0.7.0"
   },
   "dependencies": {
-    "noble-device": "git://github.com/sandeepmistry/noble-device"
+    "noble-device": "~0.1.0"
   }
 }
