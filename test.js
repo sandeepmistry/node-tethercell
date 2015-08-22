@@ -71,7 +71,7 @@ Tethercell.discover(function(tethercell) {
       },
       function(callback) {
         console.log('isOn');
-        tethercell.isOn(function(isOn) {
+        tethercell.isOn(function(error, isOn) {
           console.log('\tis on = ' + isOn);
           callback();
         });
