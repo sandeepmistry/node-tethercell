@@ -1,7 +1,7 @@
 {
   "name": "tethercell",
-  "version": "0.1.0",
-  "description": "node.js lib for the Tethercell",
+  "version": "1.0.0",
+  "description": "Node.js lib for the Tethercell",
   "main": "index.js",
   "scripts": {
     "test": "jshint *.js"
@@ -25,6 +25,6 @@
     "async": "~0.7.0"
   },
   "dependencies": {
-    "noble-device": "~0.1.0"
+    "noble-device": "^1.1.0"
   }
 }

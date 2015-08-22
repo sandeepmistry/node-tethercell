@@ -1,54 +1,69 @@
-node-tethercell
-===============
+# node-tethercell
 
 [![Analytics](https://ga-beacon.appspot.com/UA-56089547-1/sandeepmistry/node-tethercell?pixel)](https://github.com/igrigorik/ga-beacon)
 
-node.js lib for the [Tethercell](http://tetherboard.com)
+Node.js lib for the [Tethercell](http://tetherboard.com)
 
-Install
--------
+## Install
 
-    npm install tethercell
+```sh
+npm install tethercell
+```
 
-Usage
------
+## Usage
 
-    var Tethercell = require('tethercell');
+```javascript
+var Tethercell = require('tethercell');
+```
 
 __Discover__
 
-    Tethercell.discover(callback(tethercell));
+```javascript
+Tethercell.discover(callback(tethercell));
+```
 
 __Connect and Setup (discover services and characteristics)__
 
-    tethercell.connectAndSetup(callback);
+```javascript
+tethercell.connectAndSetup(callback(error));
+```
 
 __Disconnect__
 
-    tethercell.disconnect(callback);
+```javascript
+tethercell.disconnect(callback);
+```
 
 __Authorize__
 
-    var pin = '00000000';
+```javascript
+var pin = '00000000';
 
-    tethercell.authorize(pin, callback);
+tethercell.authorize(pin, callback(error));
+```
 
 __Turn on/off, is on__
 
-    tethercell.turnOn(callback);
+```javascript
+tethercell.turnOn(callback(error));
 
-    tethercell.turnOff(callback);
+tethercell.turnOff(callback(error));
 
-    tethercell.isOn(callback(isOn));
+tethercell.isOn(callback(error, isOn));
+```
 
 __Voltage__
 
-    tethercell.readVoltage(callback(voltage));
+```javascript
+tethercell.readVoltage(callback(error, voltage));
+```
 
 __Device Name__
 
-    tethercell.readDeviceName(callback(deviceName));
+```javascript
+tethercell.readDeviceName(callback(error, deviceName));
 
-    var deviceName = 'TETHERCELL ONE';
+var deviceName = 'TETHERCELL ONE';
 
-    tethercell.writeDeviceName(deviceName, callback);
+tethercell.writeDeviceName(deviceName, callback(error));
+```

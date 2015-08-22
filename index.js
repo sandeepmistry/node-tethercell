@@ -34,8 +34,8 @@ Tethercell.prototype.authorize = function(pin, callback) {
 };
 
 Tethercell.prototype.readFetState = function(callback) {
-  this.readServiceDataCharacteristic(FET_STATE_UUID, function(data) {
-    callback(data);
+  this.readServiceDataCharacteristic(FET_STATE_UUID, function(error, data) {
+    callback(error, data);
   }.bind(this));
 };
 
@@ -54,16 +54,24 @@ Tethercell.prototype.turnOff = function(callback) {
 };
 
 Tethercell.prototype.isOn = function(callback) {
-  this.readFetState(function(data) {
-    callback(data[0] ? true : false);
+  this.readFetState(function(error, data) {
+    if (error) {
+      callback(error);
+    } else {
+      callback(null, data[0] ? true : false);
+    }
   }.bind(this));
 };
 
 Tethercell.prototype.readVoltage = function(callback) {
-  this.readUInt16LECharacteristic(SERVICE_UUID, VOLTAGE_UUID, function(value) {
-    var voltage = 1.36 * (value / 1662.0);
+  this.readUInt16LECharacteristic(SERVICE_UUID, VOLTAGE_UUID, function(error, value) {
+    if (error) {
+      callback(error);
+    } else {
+      var voltage = 1.36 * (value / 1662.0);
 
-    callback(voltage);
+      callback(error, voltage);
+    }
   }.bind(this));
 };
 

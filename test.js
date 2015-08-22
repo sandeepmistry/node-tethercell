@@ -3,7 +3,7 @@ var async = require('async');
 var Tethercell = require('./index');
 
 Tethercell.discover(function(tethercell) {
-  console.log('found ' + tethercell.uuid);
+  console.log('found ' + tethercell.id);
 
   tethercell.on('disconnect', function() {
     console.log('disconnected!');
@@ -17,42 +17,42 @@ Tethercell.discover(function(tethercell) {
       },
       function(callback) {
         console.log('readModelNumber');
-        tethercell.readModelNumber(function(modelNumber) {
+        tethercell.readModelNumber(function(error, modelNumber) {
           console.log('\tmodel name = ' + modelNumber);
           callback();
         });
       },
       function(callback) {
         console.log('readSerialNumber');
-        tethercell.readSerialNumber(function(serialNumber) {
+        tethercell.readSerialNumber(function(error, serialNumber) {
           console.log('\tserial name = ' + serialNumber);
           callback();
         });
       },
       function(callback) {
         console.log('readFirmwareRevision');
-        tethercell.readFirmwareRevision(function(firmwareRevision) {
+        tethercell.readFirmwareRevision(function(error, firmwareRevision) {
           console.log('\tfirmware revision = ' + firmwareRevision);
           callback();
         });
       },
       function(callback) {
         console.log('readHardwareRevision');
-        tethercell.readHardwareRevision(function(hardwareRevision) {
+        tethercell.readHardwareRevision(function(error, hardwareRevision) {
           console.log('\thardware revision = ' + hardwareRevision);
           callback();
         });
       },
       function(callback) {
         console.log('readSoftwareRevision');
-        tethercell.readSoftwareRevision(function(softwareRevision) {
+        tethercell.readSoftwareRevision(function(error, softwareRevision) {
           console.log('\tsoftware revision = ' + softwareRevision);
           callback();
         });
       },
       function(callback) {
         console.log('readManufacturerName');
-        tethercell.readManufacturerName(function(manufacturerName) {
+        tethercell.readManufacturerName(function(error, manufacturerName) {
           console.log('\tmanufacturer name = ' + manufacturerName);
           callback();
         });
@@ -65,7 +65,7 @@ Tethercell.discover(function(tethercell) {
       },
       function(callback) {
         console.log('turnOff');
-        tethercell.turnOff(function() {
+        tethercell.turnOff(function(error) {
           setTimeout(callback, 5000);
         });
       },
@@ -78,40 +78,40 @@ Tethercell.discover(function(tethercell) {
       },
       function(callback) {
         console.log('turnOn');
-        tethercell.turnOn(function() {
+        tethercell.turnOn(function(error) {
           setTimeout(callback, 5000);
         });
       },
       function(callback) {
         console.log('isOn');
-        tethercell.isOn(function(isOn) {
+        tethercell.isOn(function(error, isOn) {
           console.log('\tis on = ' + isOn);
           callback();
         });
       },
       function(callback) {
         console.log('turnOff');
-        tethercell.turnOff(function() {
+        tethercell.turnOff(function(error) {
           setTimeout(callback, 5000);
         });
       },
       function(callback) {
         console.log('isOn');
-        tethercell.isOn(function(isOn) {
+        tethercell.isOn(function(error, isOn) {
           console.log('\tis on = ' + isOn);
           callback();
         });
       },
       function(callback) {
         console.log('readVoltage');
-        tethercell.readVoltage(function(voltage) {
+        tethercell.readVoltage(function(error, voltage) {
           console.log('\tvoltage = ' + voltage + 'V');
           callback();
         });
       },
       function(callback) {
         console.log('readDeviceName');
-        tethercell.readDeviceName(function(deviceName) {
+        tethercell.readDeviceName(function(error, deviceName) {
           console.log('\tdevice name = ' + deviceName);
 
           deviceName = 'TETHERCELL ONE';
